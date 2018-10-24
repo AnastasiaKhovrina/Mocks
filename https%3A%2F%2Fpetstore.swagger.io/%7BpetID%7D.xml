@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="{petID}" path="/v2/pet/{petID}" id="eaa774f5-a18f-47e0-94f3-5235c18feb5d" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="eaa774f5-a18f-47e0-94f3-5235c18feb5dfileName">%7BpetID%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>petID</con:name>
+      <con:value>petID</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>petID</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Method 1" id="d85c7ac8-2d50-4393-bdef-e13b118d8a68" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="adbd4d18-2107-487f-b7ac-31d32a6e337d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8088/</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:soapui-project id="3f21df11-2929-44a5-8ed8-d54ff3779bfa" created="2.5.0" activeEnvironment="Default environment" name="REST Project 3" resourceRoot="" compositeProjectFormat="1.3" updated="2.5.0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings/>
+  <con:settings>
+    <con:setting id="3f21df11-2929-44a5-8ed8-d54ff3779bfafileName">REST-Project-3</con:setting>
+  </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
     <con:repositoryIdentifier>https://github.com/AnastasiaKhovrina/Mocks.git</con:repositoryIdentifier>
@@ -12,6 +14,7 @@
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
+  <con:reporting/>
   <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
     <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
 // This code is often used for adding custom authentication to SoapUI Pro tests
