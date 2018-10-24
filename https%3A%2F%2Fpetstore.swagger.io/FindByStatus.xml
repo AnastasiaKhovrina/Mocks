@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="FindByStatus" path="/v2/pet/findByStatus" id="2f45172c-61f4-4801-8b04-420fea10fb42" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2f45172c-61f4-4801-8b04-420fea10fb42fileName">FindByStatus</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="FindByStatus" id="f3d928af-d6e5-4240-a59a-ede3ddcc7021" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>status</con:name>
+        <con:value>pending</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>pending</con:default>
+        <con:path xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="1b8037d5-36a6-42e5-9293-101860765110" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://petstore.swagger.io</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <entry key="status" value="pending" xmlns="http://eviware.com/soapui/config"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>status</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
