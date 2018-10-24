@@ -1,5 +1,5 @@
-https%3A%2F%2Fpetstore.swagger.io\FindByStatus.xml
 https%3A%2F%2Fpetstore.swagger.io\%7BpetID%7D.xml
+https%3A%2F%2Fpetstore.swagger.io\FindByStatus.xml
 https%3A%2F%2Fpetstore.swagger.io-TestSuite\https%3A%2F%2Fpetstore.swagger.io-TestCase.xml
-with-a-space-Virtual-Service\%2Fv2%2Fpet%2FfindByStatus.xml
 with-a-space-Virtual-Service\%2Fv2%2Fpet%2F%7BpetID%7D.xml
+with-a-space-Virtual-Service\%2Fv2%2Fpet%2FfindByStatus.xml

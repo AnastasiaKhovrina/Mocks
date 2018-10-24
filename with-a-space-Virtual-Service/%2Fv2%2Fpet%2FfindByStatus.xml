@@ -7,7 +7,7 @@
   <con:dispatchConfig/>
   <con:dispatchXPath/>
   <con:routeScript/>
-  <con:response name="Response 1" id="11985913-d6e2-4a79-a99b-8f58d97a29b7" httpResponseStatus="200">
+  <con:response name="Response 1" id="11985913-d6e2-4a79-a99b-8f58d97a29b7" httpResponseStatus="200" dataSource="">
     <con:settings/>
   </con:response>
 </con:restMockAction>
