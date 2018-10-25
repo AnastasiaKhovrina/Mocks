@@ -2,18 +2,138 @@
 <con:soapui-project id="3f21df11-2929-44a5-8ed8-d54ff3779bfa" created="2.5.0" activeEnvironment="Default environment" name="REST Project 3" resourceRoot="" compositeProjectFormat="1.3" updated="2.5.0" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="3f21df11-2929-44a5-8ed8-d54ff3779bfafileName">REST-Project-3</con:setting>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.ProTestRunnerUIAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value="PDF"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="true"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Slack Channel(s)" value=""/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Test Suite Tags" value=""/>
+  <con:entry key="Select Report Type" value="Project printable report"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Test Suite" value="&lt;all>"/>
+  <con:entry key="Run in-process" value="false"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Test Case Tags" value=""/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value="-GPassword=123456"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Test Case" value="&lt;all>"/>
+  <con:entry key="Slack Access Token" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files\SmartBear\ReadyAPI-2.5.0\bin"/>
+  <con:entry key="Environment" value="Default environment"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="D:\reports"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
   </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
     <con:repositoryIdentifier>https://github.com/AnastasiaKhovrina/Mocks.git</con:repositoryIdentifier>
   </con:vcsConfiguration>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:properties/>
+  <con:requirements/>
+  <con:properties>
+    <con:property>
+      <con:name>apikey</con:name>
+      <con:value>9999999999999</con:value>
+    </con:property>
+  </con:properties>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer/>
   <con:oAuth1ProfileContainer/>
+  <con:beforeRunScript>import com.eviware.soapui.impl.wsdl.teststeps.RestTestRequestStep
+
+
+
+//for requests on Projects tab
+
+def iface = project.getInterfaceByName("https://petstore.swagger.io"); // the name of the project interface (you can find on the Projects tab)
+
+def operations  = iface.getAllOperations()
+
+for(def o: operations) {
+
+    def requests = o.getRequestList()
+
+    for(def r: requests) {
+
+        def params = r.getParams()
+
+                if(params == null) {
+
+                    continue
+
+                }
+
+        def x = params.getProperty("petID")   // the name of the parameter
+
+        if (x != null) {
+
+            x.setValue('${#Project#apikey}')    // the value which you want to set (it can be a property expansion)
+
+        }
+
+    }
+
+}
+
+
+
+//for requests on SoapUI tab
+
+for(def i = 0; i &lt; project.getTestSuiteCount(); i++) {
+
+    def suite = project.getTestSuiteAt(i)
+
+    for (def j = 0; j &lt; suite.getTestCaseCount(); j++) {
+
+        def testcase = suite.getTestCaseAt(j)
+
+        for(def k = 0; k &lt; testcase.getTestStepCount(); k++) {
+
+            def step = testcase.getTestStepAt(k);            
+
+              if (step instanceof RestTestRequestStep) {
+
+                    def params = step.getTestRequest().getParams()
+
+                    if(params == null) {
+
+                        continue
+
+                    }
+
+                    def x = params.getProperty("petID")    // the name of the parameter
+
+                if (x != null) {
+
+                    x.setValue('${#Project#apikey}')    // the value which you want to set (it can be a property expansion)
+
+                }
+
+              }
+
+        }
+
+    }
+
+}</con:beforeRunScript>
   <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
     <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
 // This code is often used for adding custom authentication to SoapUI Pro tests

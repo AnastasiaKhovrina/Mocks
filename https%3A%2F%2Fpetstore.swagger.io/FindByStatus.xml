@@ -16,6 +16,12 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
     <con:request name="Request 1" id="1b8037d5-36a6-42e5-9293-101860765110" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://petstore.swagger.io</con:endpoint>
