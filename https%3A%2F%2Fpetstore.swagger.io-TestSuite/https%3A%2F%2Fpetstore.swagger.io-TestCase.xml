@@ -9,6 +9,15 @@
     <con:setting id="IncludeCoverage">true</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="groovy" name="Set System Properties - keystore" id="817d3711-0e28-43bd-90dc-0095566c6305">
+    <con:settings/>
+    <con:config>
+      <script>//import java.lang.*;
+//System.setProperty("javax.net.ssl.trustStore","&lt;location of trustStore>");
+//System.setProperty("javax.net.ssl.keyStore","D:\\Certificates - Security\\client.keystore");
+//System.setProperty("javax.net.ssl.keyStorePassword","&lt;password>");</script>
+    </con:config>
+  </con:testStep>
   <con:testStep type="restrequest" name="Request 1" id="9f999b8b-26eb-44b8-9a48-21ff92127396">
     <con:settings/>
     <con:config service="https://petstore.swagger.io" resourcePath="/v2/pet/findByStatus" methodName="FindByStatus" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -53,6 +62,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:setupScript/>
   <con:properties>
     <con:property>
       <con:name>password</con:name>

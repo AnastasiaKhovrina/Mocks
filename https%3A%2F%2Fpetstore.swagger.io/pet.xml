@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="pet" path="/v2/pet" id="a569f003-ce85-4016-83aa-0a3a4b35cb23" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a569f003-ce85-4016-83aa-0a3a4b35cb23fileName">pet</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Method 1" id="725daa47-fbca-46f0-9893-cf76037a0d53" method="POST">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="2438e278-e3f4-43be-90cf-bb235fd54226" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>http://localhost:8088/</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

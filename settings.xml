@@ -39,6 +39,7 @@
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="false"/>
 </xml-fragment>]]></con:setting>
+    <con:setting id="ProjectSettings@hermesConfig"/>
   </con:settings>
   <con:vcsConfiguration>
     <con:vcsName>Git</con:vcsName>
