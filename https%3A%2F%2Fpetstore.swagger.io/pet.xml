@@ -12,6 +12,7 @@
       <con:endpoint>http://localhost:8088/</con:endpoint>
       <con:request/>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
